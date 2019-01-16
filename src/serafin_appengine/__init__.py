@@ -17,8 +17,8 @@
 from __future__ import absolute_import, unicode_literals
 
 # 3rd party imports
-from serafin.core import util
-from serafin.core.serializer import serialize
+from serafin import util
+from serafin.serializer import serialize
 
 # GAE bundled imports
 from google.appengine.ext import ndb
