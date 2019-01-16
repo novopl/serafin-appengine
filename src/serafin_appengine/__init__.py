@@ -17,14 +17,14 @@
 from __future__ import absolute_import, unicode_literals
 
 # 3rd party imports
-from serafin.core import util
-from serafin.core.serializer import serialize
+from serafin import util
+from serafin.serializer import serialize
 
 # GAE bundled imports
 from google.appengine.ext import ndb
 
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 
 @serialize.type(ndb.Model)
