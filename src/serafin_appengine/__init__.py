@@ -33,7 +33,10 @@ def serialize_ndb_model(obj, spec, ctx):
     if spec is True or spec.empty():
         return {}
 
-    ret = {'id': obj.key.id()}
+    ret = {}
+    if obj.key is not None and 'id' in spec:
+        ret['id'] = obj.key.id()
+
     props = list(util.iter_public_props(obj, lambda n, v: n in spec))
 
     ret.update(serialize_ndb_props(obj, spec, ctx))
