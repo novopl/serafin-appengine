@@ -68,7 +68,6 @@ def serialize_ndb_props(model, fieldspec, ctx):
             value = prop._get_for_dict(model)
 
             if isinstance(value, ndb.Key):
-                name += '_id'
                 value = value.id()
 
             data[name] = serialize.raw(value, fieldspec[name], ctx)
