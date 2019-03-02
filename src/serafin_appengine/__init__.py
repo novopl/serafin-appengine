@@ -24,7 +24,7 @@ from serafin.serializer import serialize
 from google.appengine.ext import ndb
 
 
-__version__ = '0.1.3'
+__version__ = '0.2'
 
 
 @serialize.type(ndb.Model)
