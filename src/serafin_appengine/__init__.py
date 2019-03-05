@@ -24,7 +24,7 @@ from serafin.serializer import serialize
 from google.appengine.ext import ndb
 
 
-__version__ = '0.2'
+__version__ = '0.2.1'
 
 
 @serialize.type(ndb.Model)
@@ -65,7 +65,7 @@ def serialize_ndb_props(model, fieldspec, ctx):
         name = prop._code_name
 
         if name in fieldspec:
-            value = prop._get_for_dict(model)
+            value = getattr(model, name)
 
             if isinstance(value, ndb.Key):
                 value = value.id()
